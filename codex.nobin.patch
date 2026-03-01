@@ -1,0 +1,1095 @@
+﻿diff --git a/README.md b/README.md
+index e215bc4ccf138bbc38ad58ad57e92135484b3c0f..eddc08063cfe69519d6ac1724b3d86fbd6cd976a 100644
+--- a/README.md
++++ b/README.md
+@@ -1,36 +1,50 @@
+-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
++# REGAL WEB SERVICE・亥ｼ∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑繧ｵ繧､繝茨ｼ・
+ 
+-## Getting Started
++Next.js 16.1.x・・pp Router・・ TypeScript + Tailwind CSS 縺ｧ讒狗ｯ峨＠縺溘？P蝙記P繧ｵ繧､繝医〒縺吶・
+ 
+-First, run the development server:
++## 蠢・ｦ∫腸蠅・
++
++- Node.js 20.9+
++- npm 10+
++
++## 繝ｭ繝ｼ繧ｫ繝ｫ襍ｷ蜍・
+ 
+ ```bash
++npm install
+ npm run dev
+-# or
+-yarn dev
+-# or
+-pnpm dev
+-# or
+-bun dev
+ ```
+ 
+-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
++髢狗匱繧ｵ繝ｼ繝舌・: `http://localhost:3000`
+ 
+-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
++## Turbopack縺ｧ蝠城｡後′縺ゅｋ蝣ｴ蜷茨ｼ・ebpack蝗樣∩・・
+ 
+-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
++Next.js 16 縺ｧ縺ｯ `next dev` 縺梧ｨ呎ｺ悶〒 Turbopack 縺ｧ縺吶ょ撫鬘後′縺ゅｋ蝣ｴ蜷医・莉･荳九ｒ蛻ｩ逕ｨ縺励※縺上□縺輔＞縲・
+ 
+-## Learn More
++```bash
++npx next dev --webpack
++```
+ 
+-To learn more about Next.js, take a look at the following resources:
++## 繝薙Ν繝・/ 譛ｬ逡ｪ襍ｷ蜍・
+ 
+-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
++```bash
++npm run build
++npm run start
++```
+ 
+-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
++## Vercel繝・・繝ｭ繧､謇矩・ｼ・itHub騾｣謳ｺ・・
+ 
+-## Deploy on Vercel
++1. GitHub 縺ｫ縺薙・繝ｪ繝昴ず繝医Μ繧・push
++2. Vercel 繝繝・す繝･繝懊・繝峨〒 **New Project** 繧帝∈謚・
++3. 蟇ｾ雎｡ GitHub 繝ｪ繝昴ず繝医Μ繧・Import
++4. Framework Preset 縺ｯ **Next.js**・郁・蜍包ｼ・
++5. Build Command: `next build`・医ョ繝輔か繝ｫ繝茨ｼ・
++6. Node.js 縺ｯ 20.9+ 繧呈欠螳夲ｼ・roject Settings > General・・
++7. Deploy 繧貞ｮ溯｡・
+ 
+-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
++## 繝壹・繧ｸ讒区・
+ 
+-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
++- `/` 繝帙・繝
++- `/service` 繧ｵ繝ｼ繝薙せ
++- `/works` 螳溽ｸｾ
++- `/about` 驕句霧閠・
++- `/contact` 縺雁撫縺・粋繧上○
+diff --git a/app/about/page.tsx b/app/about/page.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..cef705b3eb29a179fc4b223b5fc82a8c3425b497
+--- /dev/null
++++ b/app/about/page.tsx
+@@ -0,0 +1,45 @@
++import type { Metadata } from "next";
++import Section from "@/components/Section";
++
++export const metadata: Metadata = {
++  title: "About",
++  description:
++    "驕句霧・哮WS・亥ｷ晢ｨ第あ遏｢・峨よｳ募ｾ九・螢ｫ讌ｭ鬆伜沺縺ｮ逅・ｧ｣繧呈ｴｻ縺九＠縲∝ｰ守ｷ夊ｨｭ險医・霆ｽ蠕ｮ謾ｹ菫ｮ繝ｻ險域ｸｬ繝ｻ譛域ｬ｡繝ｬ繝昴・繝医ｒ謠蝉ｾ帙・,
++  openGraph: {
++    title: "About | REGAL WEB SERVICE",
++    description: "驕句霧閠・ュ蝣ｱ縺ｨ縲∵ｳ募ｾ矩伜沺縺ｫ縺翫￠繧妓eb驕狗畑繧ｹ繧ｿ繝ｳ繧ｹ繧堤ｴｹ莉九・,
++    images: ["/og.png"],
++  },
++};
++
++export default function AboutPage() {
++  return (
++    <>
++      <section className="py-14 md:py-16">
++        <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
++          <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">驕句霧閠・↓縺､縺・※</h1>
++          <p className="mt-4 text-base leading-8 text-slate-700">
++            驕句霧・哮WS・亥ｷ晢ｨ第あ遏｢・峨よｳ募ｾ九・螢ｫ讌ｭ鬆伜沺縺ｮ譁・ц繧定ｸ上∪縺医・℃蠎ｦ縺ｪ陦ｨ迴ｾ繧帝∩縺代◆螳溷漁逧・↑Web驕狗畑繧定｡後＞縺ｾ縺吶・
++          </p>
++        </div>
++      </section>
++
++      <Section title="繧ｹ繧ｿ繝ｳ繧ｹ" className="bg-slate-50">
++        <p className="text-sm leading-7 text-slate-700">蟆上＆縺乗隼蝟・・險域ｸｬ竊堤ｩ阪∩荳翫￡縲りｦｳ貂ｬ蜿ｯ閭ｽ縺ｪ謖・ｨ吶ｒ繧ゅ→縺ｫ邯咏ｶ夂噪縺ｪ謾ｹ蝟・ｒ騾ｲ繧√∪縺吶・/p>
++      </Section>
++
++      <Section title="縺ｧ縺阪ｋ縺薙→・域妙險・・>
++        <ul className="list-disc space-y-2 pl-6 text-sm leading-7 text-slate-700">
++          <li>蟆守ｷ夊ｨｭ險・/li>
++          <li>霆ｽ蠕ｮ謾ｹ菫ｮ</li>
++          <li>險域ｸｬ</li>
++          <li>譛域ｬ｡繝ｬ繝昴・繝・/li>
++        </ul>
++      </Section>
++
++      <Section title="隕∽ｻｶ谺｡隨ｬ縺ｧ蟇ｾ蠢懶ｼ域署謳ｺ蜷ｫ繧・・ className="bg-slate-50">
++        <p className="text-sm leading-7 text-slate-700">API騾｣謳ｺ/閾ｪ蜍募喧縺ｯ縲∬ｦ∽ｻｶ縺ｨ驕狗畑菴灘宛縺ｫ蠢懊§縺ｦ謠先声繝代・繝医リ繝ｼ縺ｨ騾｣謳ｺ縺励※騾ｲ繧√∪縺吶・/p>
++      </Section>
++    </>
++  );
++}
+diff --git a/app/contact/page.tsx b/app/contact/page.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..7bf4a1ea9362e06d66176a979ab9571eb4fdaf93
+--- /dev/null
++++ b/app/contact/page.tsx
+@@ -0,0 +1,48 @@
++import type { Metadata } from "next";
++import CTAButton from "@/components/CTAButton";
++import Section from "@/components/Section";
++import ContactForm from "@/components/ContactForm";
++
++const timerexUrl = "https://timerex.net/s/kws-k_f5a1/322f59ff";
++
++export const metadata: Metadata = {
++  title: "Contact",
++  description:
++    "TimeRex莠育ｴ・ｒ譛蜆ｪ蜈医↓縺励◆縺雁撫縺・粋繧上○繝壹・繧ｸ縲ょｯｾ髱｢逶ｸ隲・｡亥・縺ｨ莠句燕繝偵い繝ｪ繝ｳ繧ｰ繝輔か繝ｼ繝繧堤畑諢上＠縺ｦ縺・∪縺吶・,
++  openGraph: {
++    title: "Contact | REGAL WEB SERVICE",
++    description: "15蛻・┌譁咏嶌隲・・莠育ｴ・→莠句燕繝偵い繝ｪ繝ｳ繧ｰ縺ｯ縺薙■繧峨・,
++    images: ["/og.png"],
++  },
++};
++
++export default function ContactPage() {
++  return (
++    <>
++      <section className="bg-slate-50 py-14 md:py-16">
++        <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
++          <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">縺雁撫縺・粋繧上○</h1>
++          <p className="mt-4 text-base leading-8 text-slate-700">
++            縺ｾ縺壹・TimeRex縺ｧ15蛻・┌譁咏嶌隲・ｒ縺比ｺ育ｴ・￥縺縺輔＞縲ら樟迥ｶ繧堤｢ｺ隱阪＠縲∝ｯｾ蠢懃ｯ・峇繧呈紛逅・＠縺ｾ縺吶・
++          </p>
++          <div className="mt-6">
++            <CTAButton href={timerexUrl} external className="w-full sm:w-auto">
++              15蛻・┌譁咏嶌隲・ｒ莠育ｴ・ｼ・imeRex・・
++            </CTAButton>
++          </div>
++        </div>
++      </section>
++
++      <Section title="蟇ｾ髱｢繧偵＃蟶梧悍縺ｮ蝣ｴ蜷・>
++        <p className="text-sm leading-7 text-slate-700">
++          蟇ｾ髱｢謇薙■蜷医ｏ縺帙・譚ｱ莠ｬ驛ｽ蜀・ｼ亥ｹｳ譌･ 10:00縲・8:00・峨ｒ蝓ｺ譛ｬ縺ｫ隱ｿ謨ｴ縺励※縺・∪縺吶ょｴ謇繧・擅莉ｶ縺ｯ莠育ｴ・凾繝｡繝｢谺・↓縺碑ｨ伜・縺上□縺輔＞縲・
++          窶ｻ繧ｨ繝ｪ繧｢繝ｻ譌･遞九↓繧医ｊ繧ｪ繝ｳ繝ｩ繧､繝ｳ繧偵＃譯亥・縺吶ｋ蝣ｴ蜷医′縺ゅｊ縺ｾ縺吶・
++        </p>
++      </Section>
++
++      <Section title="邁｡譏薙ヵ繧ｩ繝ｼ繝・井ｺ句燕繝偵い繝ｪ繝ｳ繧ｰ・・ className="bg-slate-50">
++        <ContactForm />
++      </Section>
++    </>
++  );
++}
+diff --git a/app/globals.css b/app/globals.css
+index a2dc41ecee5ec435200fe7cba2bde4107f823774..8a0d5de92ad9140245139837218d94171712fe13 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -1,26 +1,44 @@
+ @import "tailwindcss";
+ 
+-:root {
+-  --background: #ffffff;
+-  --foreground: #171717;
++* {
++  box-sizing: border-box;
+ }
+ 
+-@theme inline {
+-  --color-background: var(--background);
+-  --color-foreground: var(--foreground);
+-  --font-sans: var(--font-geist-sans);
+-  --font-mono: var(--font-geist-mono);
++body {
++  margin: 0;
++  background: #ffffff;
++  color: #0f172a;
++  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
++  line-height: 1.6;
+ }
+ 
+-@media (prefers-color-scheme: dark) {
+-  :root {
+-    --background: #0a0a0a;
+-    --foreground: #ededed;
+-  }
++a {
++  color: inherit;
++  text-underline-offset: 2px;
+ }
+ 
+-body {
+-  background: var(--background);
+-  color: var(--foreground);
+-  font-family: Arial, Helvetica, sans-serif;
++.skip-link {
++  position: absolute;
++  left: 1rem;
++  top: -3rem;
++  z-index: 60;
++  border-radius: 0.5rem;
++  background: #0f172a;
++  color: #fff;
++  padding: 0.5rem 0.75rem;
++}
++
++.skip-link:focus {
++  top: 0.75rem;
++}
++
++@media (prefers-reduced-motion: reduce) {
++  *,
++  *::before,
++  *::after {
++    animation-duration: 0.01ms !important;
++    animation-iteration-count: 1 !important;
++    transition-duration: 0.01ms !important;
++    scroll-behavior: auto !important;
++  }
+ }
+diff --git a/app/layout.tsx b/app/layout.tsx
+index f7fa87eb875260ed98651bc419c8139b5119e554..1c88f27cab5d652592990dcff3a59b8774f5eae5 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -1,34 +1,41 @@
+ import type { Metadata } from "next";
+-import { Geist, Geist_Mono } from "next/font/google";
+ import "./globals.css";
++import Header from "@/components/Header";
++import Footer from "@/components/Footer";
++import MobileStickyCTA from "@/components/MobileStickyCTA";
+ 
+-const geistSans = Geist({
+-  variable: "--font-geist-sans",
+-  subsets: ["latin"],
+-});
+-
+-const geistMono = Geist_Mono({
+-  variable: "--font-geist-mono",
+-  subsets: ["latin"],
+-});
++const siteName = "REGAL WEB SERVICE";
++const siteDescription =
++  "莨∵･ｭ豕募漁縺ｫ蠑ｷ縺・ｼ∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑繧ｵ繝ｼ繝薙せ縲ゅ・繝ｼ繧ｸ讒区・ﾃ佑TAﾃ苓ｨ域ｸｬ縺ｧ蝠上＞蜷医ｏ縺帛ｰ守ｷ壹ｒ豈取怦謾ｹ蝟・・;
+ 
+ export const metadata: Metadata = {
+-  title: "Create Next App",
+-  description: "Generated by create next app",
++  metadataBase: new URL("https://example.com"),
++  title: {
++    default: `${siteName} | 蠑∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑`,
++    template: `%s | ${siteName}`,
++  },
++  description: siteDescription,
++  openGraph: {
++    title: `${siteName} | 蠑∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑`,
++    description: siteDescription,
++    images: ["/og.png"],
++    locale: "ja_JP",
++    type: "website",
++  },
+ };
+ 
+-export default function RootLayout({
+-  children,
+-}: Readonly<{
+-  children: React.ReactNode;
+-}>) {
++export default function RootLayout({ children }: { children: React.ReactNode }) {
+   return (
+-    <html lang="en">
+-      <body
+-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+-      >
+-        {children}
++    <html lang="ja">
++      <body className="bg-white text-slate-900 antialiased">
++        <a href="#main-content" className="skip-link">
++          譛ｬ譁・∈繧ｹ繧ｭ繝・・
++        </a>
++        <Header />
++        <main id="main-content">{children}</main>
++        <Footer />
++        <MobileStickyCTA />
+       </body>
+     </html>
+   );
+ }
+diff --git a/app/page.tsx b/app/page.tsx
+index 295f8fdf14fcfe6cccaa832133037157521b1890..5e5534f596aa5aa5fa8c8b6919516ae7910d7253 100644
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -1,65 +1,78 @@
+-import Image from "next/image";
++import type { Metadata } from "next";
++import CTAButton from "@/components/CTAButton";
++import Section from "@/components/Section";
++import FAQ from "@/components/FAQ";
+ 
+-export default function Home() {
++const timerexUrl = "https://timerex.net/s/kws-k_f5a1/322f59ff";
++
++export const metadata: Metadata = {
++  title: "繝帙・繝",
++  description:
++    "莨∵･ｭ豕募漁縺ｮ蝠上＞蜷医ｏ縺帛ｰ守ｷ壹↓蠑ｷ縺・∝ｼ∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑縲ゅ・繝ｼ繧ｸ讒区・ﾃ佑TAﾃ苓ｨ域ｸｬ縺ｧ豈取怦謾ｹ蝟・＠縺ｾ縺吶・,
++  openGraph: {
++    title: "繝帙・繝 | REGAL WEB SERVICE",
++    description:
++      "莨∵･ｭ豕募漁縺ｮ蝠上＞蜷医ｏ縺帛ｰ守ｷ壹↓蠑ｷ縺・∝ｼ∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑縲ゅ・繝ｼ繧ｸ讒区・ﾃ佑TAﾃ苓ｨ域ｸｬ縺ｧ豈取怦謾ｹ蝟・・,
++    images: ["/og.png"],
++  },
++};
++
++export default function HomePage() {
+   return (
+-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+-        <Image
+-          className="dark:invert"
+-          src="/next.svg"
+-          alt="Next.js logo"
+-          width={100}
+-          height={20}
+-          priority
+-        />
+-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+-            To get started, edit the page.tsx file.
++    <>
++      <section className="bg-slate-50 py-14 md:py-20">
++        <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
++          <p className="mb-4 text-sm font-semibold text-slate-600">REGAL WEB SERVICE</p>
++          <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-slate-900 md:text-5xl">
++            莨∵･ｭ豕募漁縺ｮ蝠上＞蜷医ｏ縺帛ｰ守ｷ壹↓蠑ｷ縺・ょｼ∬ｭｷ螢ｫ莠句漁謇蜷代￠Web驕狗畑・域怦鬘搾ｼ・
+           </h1>
+-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+-            Looking for a starting point or more instructions? Head over to{" "}
+-            <a
+-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+-              className="font-medium text-zinc-950 dark:text-zinc-50"
+-            >
+-              Templates
+-            </a>{" "}
+-            or the{" "}
+-            <a
+-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+-              className="font-medium text-zinc-950 dark:text-zinc-50"
+-            >
+-              Learning
+-            </a>{" "}
+-            center.
++          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 md:text-lg">
++            讀懃ｴ｢縺ｧ隕九▽縺九ｉ縺ｪ縺・ｼ丈ｽ輔ｒ縺励※縺・ｋ莠句漁謇縺句・縺九ｉ縺ｪ縺・ｼ丞撫縺・粋繧上○縺悟｢励∴縺ｪ縺・√ｒ縲後・繝ｼ繧ｸ讒区・ﾃ佑TAﾃ苓ｨ域ｸｬ縲阪〒豈取怦謾ｹ蝟・・
+           </p>
++          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
++            <CTAButton href={timerexUrl} external ariaLabel="15蛻・┌譁咏嶌隲・ｒ莠育ｴ・ｼ・imeRex・・>
++              15蛻・┌譁咏嶌隲・ｒ莠育ｴ・ｼ・imeRex・・
++            </CTAButton>
++            <CTAButton href="/works" variant="secondary">
++              螳溽ｸｾ繧定ｦ九ｋ
++            </CTAButton>
++          </div>
+         </div>
+-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+-          <a
+-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+-            target="_blank"
+-            rel="noopener noreferrer"
+-          >
+-            <Image
+-              className="dark:invert"
+-              src="/vercel.svg"
+-              alt="Vercel logomark"
+-              width={16}
+-              height={16}
+-            />
+-            Deploy Now
+-          </a>
+-          <a
+-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+-            target="_blank"
+-            rel="noopener noreferrer"
+-          >
+-            Documentation
+-          </a>
+-        </div>
+-      </main>
+-    </div>
++      </section>
++
++      <Section
++        title="莨∵･ｭ豕募漁繧ｵ繧､繝医・窶懷・蜿｣繝・Φ繝励Ξ窶・
++        description="謚ｼ縺怜｣ｲ繧翫〒縺ｯ縺ｪ縺上∫嶌隲・＠繧・☆縺・・蜿｣險ｭ險医ｒ蜈医↓謨ｴ縺医ｋ縺薙→縺ｧ縲・｡ｧ蝠丞ｰ主・繧貞性繧讀懆ｨ弱・蝨溷床繧剃ｽ懊ｊ縺ｾ縺吶・
++      >
++        <ul className="grid gap-3 md:grid-cols-3">
++          {[
++            "螂醍ｴ・嶌繝ｬ繝薙Η繝ｼ・丈ｽ懈・",
++            "蜉ｴ蜍吶・繧ｳ繝ｳ繝励Λ縺ｮ蛻晏虚逶ｸ隲・,
++            "鬘ｧ蝠丞ｰ主・・亥､夜Κ豕募漁驛ｨ・・,
++          ].map((item) => (
++            <li key={item} className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-medium text-slate-800">
++              {item}
++            </li>
++          ))}
++        </ul>
++      </Section>
++
++      <Section
++        title="譛域ｬ｡驕狗畑縺ｮ騾ｲ繧∵婿"
++        description="蟆上＆縺乗隼蝟・・險域ｸｬ竊堤ｩ阪∩荳翫￡繧貞渕譛ｬ縺ｫ縲∽ｻ頑怦繧・ｋ縺薙→繧呈・遒ｺ縺ｫ縺励※騾ｲ繧√∪縺吶・
++        className="bg-slate-50"
++      >
++        <ol className="space-y-3 text-sm leading-7 text-slate-700">
++          <li>1. 迴ｾ迥ｶ險ｺ譁ｭ・亥・蜿｣險ｭ險・蟆守ｷ・CTA/讀懃ｴ｢陦ｨ遉ｺ・・/li>
++          <li>2. 譛域ｬ｡繝ｬ繝昴・繝茨ｼ・A4 / Search Console / 蟆守ｷ壹け繝ｪ繝・け・・/li>
++          <li>3. 蜆ｪ蜈磯・ｽ阪▽縺肴隼蝟・署譯茨ｼ井ｻ頑怦繧・ｋ縺薙→1縲・轤ｹ・・/li>
++          <li>4. 謾ｹ蝟・ｮ溯｣・ｼ・TA驟咲ｽｮ縲∵枚遶縲∵ｧ区・縲∝・驛ｨ繝ｪ繝ｳ繧ｯ縲・溷ｺｦ縲√せ繝槭・UI・・/li>
++        </ol>
++      </Section>
++
++      <Section title="繧医￥縺ゅｋ縺碑ｳｪ蝠・>
++        <FAQ />
++      </Section>
++    </>
+   );
+ }
+diff --git a/app/service/page.tsx b/app/service/page.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..20257060fd1bea4e094bf25081c9438de2897d86
+--- /dev/null
++++ b/app/service/page.tsx
+@@ -0,0 +1,73 @@
++import type { Metadata } from "next";
++import Section from "@/components/Section";
++import CTAButton from "@/components/CTAButton";
++
++const timerexUrl = "https://timerex.net/s/kws-k_f5a1/322f59ff";
++
++export const metadata: Metadata = {
++  title: "Service",
++  description:
++    "蠑∬ｭｷ螢ｫ莠句漁謇蜷代￠譛磯｡晃eb驕狗畑縲ら樟迥ｶ險ｺ譁ｭ縲∵怦谺｡繝ｬ繝昴・繝医∵隼蝟・署譯医∵隼蝟・ｮ溯｣・ｒ荳豌鈴夊ｲｫ縺ｧ謠蝉ｾ帙・,
++  openGraph: {
++    title: "Service | REGAL WEB SERVICE",
++    description:
++      "迴ｾ迥ｶ險ｺ譁ｭ縺九ｉ謾ｹ蝟・ｮ溯｣・∪縺ｧ縲∽ｼ∵･ｭ豕募漁縺ｫ蠑ｷ縺Цeb驕狗畑繧呈怦鬘阪〒謠蝉ｾ帙＠縺ｾ縺吶・,
++    images: ["/og.png"],
++  },
++};
++
++export default function ServicePage() {
++  return (
++    <>
++      <section className="py-14 md:py-16">
++        <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
++          <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">繧ｵ繝ｼ繝薙せ蜀・ｮｹ</h1>
++          <p className="mt-4 text-base leading-8 text-slate-700">
++            譛磯｡阪・Web菫晏ｮ磯°逕ｨ繧剃ｸｻ霆ｸ縺ｫ縲∝撫縺・粋繧上○蟆守ｷ壹・謾ｹ蝟・ｒ邯咏ｶ壽髪謠ｴ縺励∪縺吶・
++          </p>
++        </div>
++      </section>
++
++      <Section>
++        <div className="grid gap-4 md:grid-cols-2">
++          {[
++            "迴ｾ迥ｶ險ｺ譁ｭ・亥・蜿｣險ｭ險・蟆守ｷ・CTA/讀懃ｴ｢陦ｨ遉ｺ・・,
++            "譛域ｬ｡繝ｬ繝昴・繝茨ｼ・A4 / Search Console / 蟆守ｷ壹け繝ｪ繝・け・・,
++            "謾ｹ蝟・署譯茨ｼ亥━蜈磯・ｽ阪▽縺搾ｼ壻ｻ頑怦繧・ｋ縺薙→1縲・轤ｹ・・,
++            "謾ｹ蝟・ｮ溯｣・ｼ・TA驟咲ｽｮ縲∵枚遶縲∵ｧ区・縲∝・驛ｨ繝ｪ繝ｳ繧ｯ縲・溷ｺｦ縲√せ繝槭・UI・・,
++          ].map((item) => (
++            <div key={item} className="rounded-lg border border-slate-200 bg-white p-4 text-sm leading-7 text-slate-800">
++              {item}
++            </div>
++          ))}
++        </div>
++      </Section>
++
++      <Section
++        title="繧ｪ繝励す繝ｧ繝ｳ・郁ｦ∽ｻｶ縺ｫ蠢懊§縺ｦ・・
++        description="荳玖ｨ倥・縺泌ｸ梧悍縺ｨ菴灘宛縺ｫ蠢懊§縺ｦ蟇ｾ蠢懊＠縺ｾ縺吶ょｿ・ｦ√↓蠢懊§縺ｦ謠先声蜈医→縺ｮ騾｣謳ｺ繧り｡後＞縺ｾ縺吶・
++        className="bg-slate-50"
++      >
++        <ul className="list-disc space-y-2 pl-6 text-sm leading-7 text-slate-700">
++          <li>LP譁ｰ隕丞宛菴・/li>
++          <li>險倅ｺ句ｰ守ｷ壹・險ｭ險医・謾ｹ蝟・/li>
++          <li>API/閾ｪ蜍募喧・・astAPI遲峨∬ｦ∽ｻｶ縺ｫ蠢懊§縺ｦ繝ｻ謠先声蜷ｫ繧・・/li>
++        </ul>
++      </Section>
++
++      <Section title="縺皮嶌隲・・豬√ｌ" description="縺ｾ縺壹・15蛻・・辟｡譁咏嶌隲・〒迴ｾ迥ｶ繧堤｢ｺ隱阪＠縺ｾ縺吶・>
++        <div className="rounded-lg border border-slate-200 bg-white p-6">
++          <p className="text-sm leading-7 text-slate-700">
++            莠句漁謇繧ｵ繧､繝・RL縺ｨ縲∫嶌隲・岼逧・・蝗ｰ繧翫＃縺ｨ繧貞・譛峨＞縺溘□縺代ｌ縺ｰ縲∝・蝗樊遠縺｡蜷医ｏ縺帙〒謾ｹ蝟・・譁ｹ蜷第ｧ繧呈紛逅・＠縺ｾ縺吶・
++            謌先棡菫晁ｨｼ縺ｧ縺ｯ縺ｪ縺上∬ｦｳ貂ｬ蜿ｯ閭ｽ縺ｪ謖・ｨ吶ｒ繝吶・繧ｹ縺ｫ謾ｹ蝟・命遲悶ｒ縺疲署譯医＠縺ｾ縺吶・
++          </p>
++          <div className="mt-5">
++            <CTAButton href={timerexUrl} external>
++              15蛻・┌譁咏嶌隲・ｒ莠育ｴ・ｼ・imeRex・・
++            </CTAButton>
++          </div>
++        </div>
++      </Section>
++    </>
++  );
++}
+diff --git a/app/works/page.tsx b/app/works/page.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..965841f856256d80aae0f0eebd65a4bd383ccc4c
+--- /dev/null
++++ b/app/works/page.tsx
+@@ -0,0 +1,41 @@
++import type { Metadata } from "next";
++import Section from "@/components/Section";
++import WorksGrid from "@/components/WorksGrid";
++import { works } from "@/data/works";
++
++export const metadata: Metadata = {
++  title: "Works",
++  description:
++    "繧ｯ繝ｩ繧､繧｢繝ｳ繝亥ｮ溽ｸｾ1莉ｶ縺ｨ閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝・莉ｶ繧呈軸霈峨りｦｳ貂ｬ謖・ｨ吶ｒ荳ｭ蠢・↓縲∵隼蝟・・繝ｭ繧ｻ繧ｹ繧帝幕遉ｺ縺励※縺・∪縺吶・,
++  openGraph: {
++    title: "Works | REGAL WEB SERVICE",
++    description: "莨∵･ｭ豕募漁蜷代￠Web驕狗畑縺ｮ螳溽ｸｾ縺ｨ讀懆ｨｼ繝励Ο繧ｸ繧ｧ繧ｯ繝医ｒ邏ｹ莉九・,
++    images: ["/og.png"],
++  },
++};
++
++export default function WorksPage() {
++  const client = works.filter((item) => item.category === "client");
++  const self = works.filter((item) => item.category === "self");
++
++  return (
++    <>
++      <section className="py-14 md:py-16">
++        <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
++          <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">螳溽ｸｾ繝ｻ讀懆ｨｼ繝励Ο繧ｸ繧ｧ繧ｯ繝・/h1>
++          <p className="mt-4 text-base leading-8 text-slate-700">
++            螢ｲ荳顔ｭ峨・譁ｭ螳壹〒縺ｯ縺ｪ縺上∵ｵ∝・繝ｻ蟆守ｷ壹け繝ｪ繝・け縺ｪ縺ｩ隕ｳ貂ｬ蜿ｯ閭ｽ縺ｪ謖・ｨ吶ｒ荳ｭ蠢・↓謾ｹ蝟・・螳ｹ繧帝幕遉ｺ縺励∪縺吶・
++          </p>
++        </div>
++      </section>
++
++      <Section title="繧ｯ繝ｩ繧､繧｢繝ｳ繝亥ｮ溽ｸｾ・・莉ｶ・・>
++        <WorksGrid items={client} />
++      </Section>
++
++      <Section title="閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ・莉ｶ・・ className="bg-slate-50">
++        <WorksGrid items={self} />
++      </Section>
++    </>
++  );
++}
+diff --git a/components/CTAButton.tsx b/components/CTAButton.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..2a4a0726da2afece2e77d3f21d5efd7f1cf675df
+--- /dev/null
++++ b/components/CTAButton.tsx
+@@ -0,0 +1,50 @@
++import Link from "next/link";
++import { ReactNode } from "react";
++
++type CTAButtonProps = {
++  href: string;
++  children: ReactNode;
++  variant?: "primary" | "secondary";
++  external?: boolean;
++  className?: string;
++  ariaLabel?: string;
++};
++
++export default function CTAButton({
++  href,
++  children,
++  variant = "primary",
++  external = false,
++  className = "",
++  ariaLabel,
++}: CTAButtonProps) {
++  const base =
++    "inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
++
++  const styles =
++    variant === "primary"
++      ? "bg-slate-900 text-white hover:bg-slate-700 focus-visible:ring-slate-700"
++      : "border border-slate-300 bg-white text-slate-900 hover:bg-slate-100 focus-visible:ring-slate-500";
++
++  const classes = `${base} ${styles} ${className}`.trim();
++
++  if (external) {
++    return (
++      <a
++        href={href}
++        target="_blank"
++        rel="noopener noreferrer"
++        className={classes}
++        aria-label={ariaLabel}
++      >
++        {children}
++      </a>
++    );
++  }
++
++  return (
++    <Link href={href} className={classes} aria-label={ariaLabel}>
++      {children}
++    </Link>
++  );
++}
+diff --git a/components/ContactForm.tsx b/components/ContactForm.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..b026a64e5254e4875d4ca404a424be9f34b93b50
+--- /dev/null
++++ b/components/ContactForm.tsx
+@@ -0,0 +1,103 @@
++"use client";
++
++import { FormEvent, useState } from "react";
++
++type FormState = {
++  siteUrl: string;
++  purpose: string;
++  issue: string;
++  budget: string;
++};
++
++const initialState: FormState = {
++  siteUrl: "",
++  purpose: "",
++  issue: "",
++  budget: "",
++};
++
++export default function ContactForm() {
++  const [formState, setFormState] = useState<FormState>(initialState);
++  const [sent, setSent] = useState(false);
++
++  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
++    event.preventDefault();
++    setSent(true);
++  };
++
++  return (
++    <form onSubmit={handleSubmit} className="space-y-4 rounded-lg border border-slate-200 bg-white p-5">
++      <div>
++        <label htmlFor="siteUrl" className="mb-1 block text-sm font-medium text-slate-800">
++          莠句漁謇繧ｵ繧､繝・RL
++        </label>
++        <input
++          id="siteUrl"
++          type="url"
++          required
++          value={formState.siteUrl}
++          onChange={(e) => setFormState({ ...formState, siteUrl: e.target.value })}
++          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700"
++          placeholder="https://example-lawfirm.jp"
++        />
++      </div>
++
++      <div>
++        <label htmlFor="purpose" className="mb-1 block text-sm font-medium text-slate-800">
++          逶ｸ隲・岼逧・
++        </label>
++        <input
++          id="purpose"
++          type="text"
++          required
++          value={formState.purpose}
++          onChange={(e) => setFormState({ ...formState, purpose: e.target.value })}
++          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700"
++          placeholder="蝠上＞蜷医ｏ縺帛ｰ守ｷ壹ｒ謾ｹ蝟・＠縺溘＞"
++        />
++      </div>
++
++      <div>
++        <label htmlFor="issue" className="mb-1 block text-sm font-medium text-slate-800">
++          蝗ｰ繧翫＃縺ｨ
++        </label>
++        <textarea
++          id="issue"
++          required
++          rows={4}
++          value={formState.issue}
++          onChange={(e) => setFormState({ ...formState, issue: e.target.value })}
++          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700"
++          placeholder="讀懃ｴ｢豬∝・縺悟ｰ代↑縺・∽ｽ輔ｒ鬆ｼ繧√ｋ縺倶ｼ昴ｏ繧峨↑縺・縺ｪ縺ｩ"
++        />
++      </div>
++
++      <div>
++        <label htmlFor="budget" className="mb-1 block text-sm font-medium text-slate-800">
++          莠育ｮ玲─/髢句ｧ句ｸ梧悍・井ｻｻ諢擾ｼ・
++        </label>
++        <input
++          id="budget"
++          type="text"
++          value={formState.budget}
++          onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
++          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700"
++          placeholder="萓具ｼ壽怦鬘・0荳・・蜑榊ｾ後∵擂譛磯幕蟋句ｸ梧悍"
++        />
++      </div>
++
++      <button
++        type="submit"
++        className="rounded-md bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700"
++      >
++        莠句燕繝偵い繝ｪ繝ｳ繧ｰ繧帝∽ｿ｡・医ム繝溘・・・
++      </button>
++
++      {sent && (
++        <p className="rounded-md bg-emerald-50 p-3 text-sm text-emerald-800" role="status" aria-live="polite">
++          騾∽ｿ｡縺ゅｊ縺後→縺・＃縺悶＞縺ｾ縺励◆縲ょ・螳ｹ繧堤｢ｺ隱阪＠縲∝ｽ捺律縺ｮ繝偵い繝ｪ繝ｳ繧ｰ縺ｧ豢ｻ逕ｨ縺励∪縺吶ゑｼ医％縺ｮ繝輔か繝ｼ繝騾∽ｿ｡縺ｯ繝繝溘・縺ｧ縺呻ｼ・
++        </p>
++      )}
++    </form>
++  );
++}
+diff --git a/components/FAQ.tsx b/components/FAQ.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..e9930a80d5d7ec5b4fc83bd34ca08b0376d8c84b
+--- /dev/null
++++ b/components/FAQ.tsx
+@@ -0,0 +1,19 @@
++import { faqs } from "@/data/faqs";
++
++export default function FAQ() {
++  return (
++    <div className="space-y-3">
++      {faqs.map((item) => (
++        <details
++          key={item.question}
++          className="rounded-lg border border-slate-200 bg-white p-4 open:shadow-sm"
++        >
++          <summary className="cursor-pointer list-none font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-600">
++            {item.question}
++          </summary>
++          <p className="mt-3 text-sm leading-7 text-slate-700">{item.answer}</p>
++        </details>
++      ))}
++    </div>
++  );
++}
+diff --git a/components/Footer.tsx b/components/Footer.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..8263a18ac532058a9ebdcb3549e4265652eef0a8
+--- /dev/null
++++ b/components/Footer.tsx
+@@ -0,0 +1,38 @@
++"use client";
++
++import { useState } from "react";
++import Link from "next/link";
++
++export default function Footer() {
++  const [open, setOpen] = useState(false);
++
++  return (
++    <footer className="border-t border-slate-200 bg-slate-50 pb-20 md:pb-8">
++      <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-8 text-sm text-slate-700 md:flex-row md:items-center md:justify-between md:px-6">
++        <p>ﾂｩ {new Date().getFullYear()} REGAL WEB SERVICE / 驕句霧・哮WS</p>
++        <div className="flex items-center gap-4">
++          <Link href="/contact" className="hover:text-slate-900">
++            縺雁撫縺・粋繧上○
++          </Link>
++          <button
++            type="button"
++            onClick={() => setOpen((prev) => !prev)}
++            aria-expanded={open}
++            aria-controls="privacy-note"
++            className="cursor-pointer hover:text-slate-900"
++          >
++            繝励Λ繧､繝舌す繝ｼ縺ｫ縺､縺・※
++          </button>
++        </div>
++      </div>
++      {open && (
++        <div id="privacy-note" className="mx-auto w-full max-w-6xl px-4 pb-8 text-sm leading-7 text-slate-700 md:px-6">
++          <p>
++            蜿門ｾ励＠縺滓ュ蝣ｱ縺ｯ縺雁撫縺・粋繧上○蟇ｾ蠢懊・譌･遞玖ｪｿ謨ｴ繝ｻ繧ｵ繝ｼ繝薙せ謾ｹ蝟・・逶ｮ逧・〒蛻ｩ逕ｨ縺励∪縺吶ゅ＃譛ｬ莠ｺ縺ｮ蜷梧э縺ｪ縺冗ｬｬ荳芽・署萓帙・陦後＞縺ｾ縺帙ｓ縲・
++            隧ｳ邏ｰ譚｡莉ｶ縺ｯ縺泌･醍ｴ・凾縺ｫ蛟句挨謠千､ｺ縺励∪縺吶・
++          </p>
++        </div>
++      )}
++    </footer>
++  );
++}
+diff --git a/components/Header.tsx b/components/Header.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..88861efa38bb890d9e4e09c54abb9608f1a45f09
+--- /dev/null
++++ b/components/Header.tsx
+@@ -0,0 +1,37 @@
++import Link from "next/link";
++import CTAButton from "@/components/CTAButton";
++
++const timerexUrl = "https://timerex.net/s/kws-k_f5a1/322f59ff";
++
++const navItems = [
++  { href: "/service", label: "Service" },
++  { href: "/works", label: "Works" },
++  { href: "/about", label: "About" },
++  { href: "/contact", label: "Contact" },
++];
++
++export default function Header() {
++  return (
++    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
++      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
++        <Link href="/" className="text-sm font-bold tracking-wide text-slate-900">
++          REGAL WEB SERVICE
++        </Link>
++        <nav aria-label="繧ｰ繝ｭ繝ｼ繝舌Ν繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ" className="hidden items-center gap-5 md:flex">
++          {navItems.map((item) => (
++            <Link
++              key={item.href}
++              href={item.href}
++              className="text-sm font-medium text-slate-700 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-700"
++            >
++              {item.label}
++            </Link>
++          ))}
++          <CTAButton href={timerexUrl} external ariaLabel="15蛻・┌譁咏嶌隲・ｒ莠育ｴ・ｼ・imeRex・・>
++            15蛻・┌譁咏嶌隲・ｒ莠育ｴ・
++          </CTAButton>
++        </nav>
++      </div>
++    </header>
++  );
++}
+diff --git a/components/MobileStickyCTA.tsx b/components/MobileStickyCTA.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..0479cf3f57ed35e41bd4e4579c180bd4ddcef54c
+--- /dev/null
++++ b/components/MobileStickyCTA.tsx
+@@ -0,0 +1,18 @@
++import CTAButton from "@/components/CTAButton";
++
++const timerexUrl = "https://timerex.net/s/kws-k_f5a1/322f59ff";
++
++export default function MobileStickyCTA() {
++  return (
++    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-300 bg-white/95 p-3 backdrop-blur md:hidden">
++      <CTAButton
++        href={timerexUrl}
++        external
++        className="w-full"
++        ariaLabel="辟｡譁咏嶌隲・ｺ育ｴ・ｼ・imeRex・・
++      >
++        辟｡譁咏嶌隲・ｺ育ｴ・
++      </CTAButton>
++    </div>
++  );
++}
+diff --git a/components/Section.tsx b/components/Section.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..9a4ada73dd8b069994238379aeca33add4cfcc31
+--- /dev/null
++++ b/components/Section.tsx
+@@ -0,0 +1,39 @@
++import { ReactNode } from "react";
++
++type SectionProps = {
++  id?: string;
++  title?: string;
++  description?: string;
++  children: ReactNode;
++  className?: string;
++};
++
++export default function Section({
++  id,
++  title,
++  description,
++  children,
++  className = "",
++}: SectionProps) {
++  return (
++    <section id={id} className={`py-12 md:py-16 ${className}`.trim()}>
++      <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
++        {(title || description) && (
++          <header className="mb-8 space-y-3">
++            {title && (
++              <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
++                {title}
++              </h2>
++            )}
++            {description && (
++              <p className="max-w-3xl text-base leading-7 text-slate-700">
++                {description}
++              </p>
++            )}
++          </header>
++        )}
++        {children}
++      </div>
++    </section>
++  );
++}
+diff --git a/components/WorksGrid.tsx b/components/WorksGrid.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..0958a5e35de3ca7344f51400b459a2ecf2a80201
+--- /dev/null
++++ b/components/WorksGrid.tsx
+@@ -0,0 +1,34 @@
++import { works, WorkItem } from "@/data/works";
++
++type WorksGridProps = {
++  items?: WorkItem[];
++};
++
++const categoryLabel: Record<WorkItem["category"], string> = {
++  client: "繧ｯ繝ｩ繧､繧｢繝ｳ繝亥ｮ溽ｸｾ",
++  self: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ域､懆ｨｼ繝ｻ謾ｹ蝟・ｼ・,
++  sample: "繧ｵ繝ｳ繝励Ν",
++};
++
++export default function WorksGrid({ items = works }: WorksGridProps) {
++  return (
++    <div className="grid gap-5 md:grid-cols-2">
++      {items.map((item) => (
++        <article
++          key={item.id}
++          className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm"
++        >
++          <p className="mb-2 text-xs font-semibold text-slate-500">{categoryLabel[item.category]}</p>
++          <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
++          <p className="mt-2 text-sm leading-7 text-slate-700">{item.summary}</p>
++          <p className="mt-2 text-sm leading-7 text-slate-700">{item.detail}</p>
++          {item.metrics && (
++            <p className="mt-2 rounded-md bg-slate-50 p-2 text-sm font-medium text-slate-800">
++              邨先棡・郁ｦｳ貂ｬ謖・ｨ呻ｼ会ｼ嘴item.metrics}
++            </p>
++          )}
++        </article>
++      ))}
++    </div>
++  );
++}
+diff --git a/data/faqs.ts b/data/faqs.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..67db7241af4d2d63a094d529653c0c7a9a9f4e56
+--- /dev/null
++++ b/data/faqs.ts
+@@ -0,0 +1,27 @@
++export type FAQItem = {
++  question: string;
++  answer: string;
++};
++
++export const faqs: FAQItem[] = [
++  {
++    question: "Web驕狗畑縺ｧ菴輔ｒ縺励※繧ゅｉ縺医∪縺吶°・・,
++    answer:
++      "蜈･蜿｣繝壹・繧ｸ縺ｮ隕狗峩縺励，TA驟咲ｽｮ繧・枚髱｢謾ｹ蝟・∬ｨ域ｸｬ險ｭ螳壹・遒ｺ隱阪∵怦谺｡繝ｬ繝昴・繝井ｽ懈・縺ｾ縺ｧ荳雋ｫ縺励※蟇ｾ蠢懊＠縺ｾ縺吶ら樟迥ｶ縺ｫ蜷医ｏ縺帙※蜆ｪ蜈磯・ｽ阪ｒ豎ｺ繧√∵ｯ取怦1縲・轤ｹ縺ｮ謾ｹ蝟・ｒ騾ｲ繧√∪縺吶・,
++  },
++  {
++    question: "縺吶＄縺ｫ謌先棡縺ｯ蜃ｺ縺ｾ縺吶°・・,
++    answer:
++      "繧ｵ繧､繝医・迴ｾ迥ｶ繧・ｫｶ蜷育腸蠅・↓繧医ｊ蟾ｮ縺後≠繧翫∪縺吶ら洒譛溘〒縺ｯ豬∝・繧・け繝ｪ繝・け邇・↑縺ｩ隕ｳ貂ｬ縺励ｄ縺吶＞謖・ｨ吶ｒ隕九↑縺後ｉ縲∵隼蝟・・遨阪∩荳翫￡縺ｧ荳ｭ髟ｷ譛溽噪縺ｪ謌先棡縺ｫ縺､縺ｪ縺偵∪縺吶・,
++  },
++  {
++    question: "蛻ｶ菴懊□縺代・萓晞ｼ縺ｯ縺ｧ縺阪∪縺吶°・・,
++    answer:
++      "蜿ｯ閭ｽ縺ｧ縺吶・P譁ｰ隕丞宛菴懊ｄ蟆守ｷ夊ｨｭ險医・縺ｿ縺ｮ縺皮嶌隲・↓繧ょｯｾ蠢懊＠縺ｾ縺吶ゅ◆縺縺励∝宛菴懷ｾ後・驕狗畑謾ｹ蝟・∪縺ｧ陦後≧譁ｹ縺悟柑譫懈､懆ｨｼ縺励ｄ縺吶＞縺溘ａ縲∵怦鬘埼°逕ｨ繧ゅ＃譯亥・縺励※縺・∪縺吶・,
++  },
++  {
++    question: "API騾｣謳ｺ繧・・蜍募喧縺ｫ繧ょｯｾ蠢懊〒縺阪∪縺吶°・・,
++    answer:
++      "隕∽ｻｶ縺ｫ蠢懊§縺ｦ蟇ｾ蠢懊＠縺ｾ縺吶ょｿ・ｦ√↓蠢懊§縺ｦ謠先声繝代・繝医リ繝ｼ縺ｨ騾｣謳ｺ縺励∫┌逅・・縺ｪ縺・ｯ・峇縺ｧ蟆主・譁ｹ豕輔ｒ縺疲署譯医＠縺ｾ縺吶・,
++  },
++];
+diff --git a/data/works.ts b/data/works.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..da604d40580509eeaf35d59e919bf854b22bf4f2
+--- /dev/null
++++ b/data/works.ts
+@@ -0,0 +1,56 @@
++export type WorkItem = {
++  id: string;
++  title: string;
++  category: "client" | "self" | "sample";
++  summary: string;
++  detail: string;
++  metrics?: string;
++};
++
++export const works: WorkItem[] = [
++  {
++    id: "client-01",
++    title: "莨∵･ｭ豕募漁邉ｻ豕募ｾ倶ｺ句漁謇繧ｵ繧､繝磯°逕ｨ",
++    category: "client",
++    summary: "讀懃ｴ｢髴ｲ蜃ｺ縺ｨ蝠上＞蜷医ｏ縺帛ｰ守ｷ壹・謾ｹ蝟・ｒ逶ｮ逧・↓縲∵怦谺｡驕狗畑縺ｧ蜈･蜿｣繝壹・繧ｸ繧貞・險ｭ險医・,
++    detail:
++      "隱ｲ鬘鯉ｼ壽､懃ｴ｢縺ｫ蜃ｺ縺ｦ縺薙↑縺・ｼ丈ｽ輔ｒ縺励※縺・ｋ縺ｮ縺九ｏ縺九ｉ縺ｪ縺・よ命遲厄ｼ壹・繝ｼ繧ｸ讒区・謾ｹ蝟・，TA蠕ｹ蠎輔》itle/description謨ｴ蛯吶∝・驛ｨ繝ｪ繝ｳ繧ｯ謨ｴ逅・∬ｨ域ｸｬ縲・,
++    metrics:
++      "蛻晄怦縺ｧ譛磯俣豬∝・縺檎ｴ・蛟搾ｼ亥燕譛域ｯ費ｼ芽ｦ乗ｨ｡縲∽ｺ育ｴ・蝠上＞蜷医ｏ縺帛ｰ守ｷ壹け繝ｪ繝・け蠅励・,
++  },
++  {
++    id: "self-01",
++    title: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ壼｣ｫ讌ｭ繧ｵ繧､繝亥ｰ守ｷ壽､懆ｨｼ",
++    category: "self",
++    summary: "繝輔ぃ繝ｼ繧ｹ繝医ン繝･繝ｼ譁・ｨ縺ｨCTA驟咲ｽｮ縺ｮAB讀懆ｨｼ繧貞ｮ滓命縲・,
++    detail: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ域､懆ｨｼ繝ｻ謾ｹ蝟・ｼ峨ら嶌隲・э蝗ｳ縺ｫ蜷医ｏ縺帙◆蟆守ｷ壹ヱ繧ｿ繝ｼ繝ｳ繧呈ｯ碑ｼ・・,
++  },
++  {
++    id: "self-02",
++    title: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ壹せ繝槭・UI譛驕ｩ蛹・,
++    category: "self",
++    summary: "SP蝗ｺ螳咾TA縺ｨ隕句・縺玲ｧ矩縺ｮ蜀崎ｨｭ險医〒蜿ｯ隱ｭ諤ｧ繧呈､懆ｨｼ縲・,
++    detail: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ域､懆ｨｼ繝ｻ謾ｹ蝟・ｼ峨ゅせ繧ｯ繝ｭ繝ｼ繝ｫ荳ｭ縺ｮ莠育ｴ・・遘ｻ邇・ｒ隕ｳ貂ｬ縲・,
++  },
++  {
++    id: "self-03",
++    title: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ哥AQ謾ｹ蝟・,
++    category: "self",
++    summary: "繧医￥縺ゅｋ雉ｪ蝠上・驟咲ｽｮ謾ｹ蝟・↓繧医ｋ髮｢閼ｱ謚大宛繧呈､懆ｨｼ縲・,
++    detail: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ域､懆ｨｼ繝ｻ謾ｹ蝟・ｼ峨ゆｺ句燕荳榊ｮ峨・隗｣豸医↓蟇・ｸ弱☆繧区ュ蝣ｱ鬆・ｺ上ｒ謨ｴ逅・・,
++  },
++  {
++    id: "self-04",
++    title: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ壼・驛ｨ繝ｪ繝ｳ繧ｯ險ｭ險・,
++    category: "self",
++    summary: "Service / Works / Contact 髢薙・蝗樣♀蟆守ｷ壹ｒ譛驕ｩ蛹悶・,
++    detail: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ域､懆ｨｼ繝ｻ謾ｹ蝟・ｼ峨ょｰ守ｷ壹け繝ｪ繝・け險域ｸｬ繧貞・縺ｫ讒矩繧定ｪｿ謨ｴ縲・,
++  },
++  {
++    id: "self-05",
++    title: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ夊ｨ域ｸｬ繝繝・す繝･繝懊・繝芽ｩｦ菴・,
++    category: "self",
++    summary: "GA4繝ｻSearch Console繝ｻCTA繧ｯ繝ｪ繝・け繧呈怦谺｡縺ｧ蜿ｯ隕門喧縲・,
++    detail: "閾ｪ遉ｾ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ域､懆ｨｼ繝ｻ謾ｹ蝟・ｼ峨よ隼蝟・署譯医・蜆ｪ蜈磯・ｽ阪▼縺醍ｲｾ蠎ｦ繧呈､懆ｨｼ縲・,
++  },
++];
+diff --git a/next.config.ts b/next.config.ts
+index e9ffa3083ad279ecf95fd8eae59cb253e9a539c4..2f6491cfba10ee06776b2acad06b2a5e440360b1 100644
+--- a/next.config.ts
++++ b/next.config.ts
+@@ -1,7 +1,7 @@
+ import type { NextConfig } from "next";
+ 
+ const nextConfig: NextConfig = {
+-  /* config options here */
++  reactStrictMode: true,
+ };
+ 
+ export default nextConfig;
+diff --git a/tailwind.config.ts b/tailwind.config.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..6a16c2e1a11bc3a962d5d051e6f60c11b4e4b21b
+--- /dev/null
++++ b/tailwind.config.ts
+@@ -0,0 +1,13 @@
++import type { Config } from "tailwindcss";
++
++export default {
++  content: [
++    "./app/**/*.{js,ts,jsx,tsx,mdx}",
++    "./components/**/*.{js,ts,jsx,tsx,mdx}",
++    "./data/**/*.{js,ts,jsx,tsx,mdx}",
++  ],
++  theme: {
++    extend: {},
++  },
++  plugins: [],
++} satisfies Config;
+ 
